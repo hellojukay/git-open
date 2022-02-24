@@ -6,7 +6,7 @@ Usage of ./git-open:
   -v    show program version
 ```
 ![demo](demo.gif)
-#install
+# install
 ```bash
 go install github.com/hellojukay/git-open@latest
 ```
