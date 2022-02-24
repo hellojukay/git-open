@@ -1,2 +1,4 @@
 git-open
 git-open.exe
+dist/
+.pls_cache/
