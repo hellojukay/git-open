@@ -26,7 +26,9 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	OpenWithSelect(origins)
+	if err := OpenWithSelect(origins); err != nil {
+		log.Fatal(err)
+	}
 }
 
 func OpenWithSelect(origins []string) error {

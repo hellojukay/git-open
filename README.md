@@ -5,6 +5,7 @@ Usage of ./git-open:
   -p    open github action page or gitlab pipeline page
   -v    show program version
 ```
+![demo](demo.gif)
 #install
 ```bash
 go install github.com/hellojukay/git-open@latest
