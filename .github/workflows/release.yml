@@ -18,6 +18,7 @@ jobs:
     - name: Upload binaries to release
       uses: svenstaro/upload-release-action@v2
       with:
+        # secrets.GITHUB_TOKEN 是内置变量
         repo_token: ${{ secrets.GITHUB_TOKEN }}
         file: dist/*
         asset_name: mything
