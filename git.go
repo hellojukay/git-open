@@ -68,8 +68,7 @@ func git2https(origins []string) []string {
 }
 
 func ISGithub(origin string) bool {
-	r := regexp.MustCompile(`github.com`)
-	return r.Match([]byte(origin))
+	return strings.Contains(origin, "https://github.com")
 }
 
 func WithPipeline(origin string) string {
