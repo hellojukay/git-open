@@ -1,4 +1,4 @@
-name: Build and test Go
+name: check
 on: [push, pull_request]
 jobs:
   check:
