@@ -6,9 +6,9 @@ Usage of ./git-open:
   -v    show program version
 ```
 ![demo](demo.gif)
-# download
+# Download
 [download](https://github.com/hellojukay/git-open/releases)
-# install
+# Install
 ```bash
 go install github.com/hellojukay/git-open@latest
 ```
