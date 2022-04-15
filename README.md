@@ -12,3 +12,10 @@ Usage of ./git-open:
 ```bash
 go install github.com/hellojukay/git-open@latest
 ```
+
+## 更多安装方法
+
+可以通过命令行 [hd](https://github.com/LinuxSuRen/http-downloader) 安装：
+```shell
+hd install hellojukay/git-open
+```
