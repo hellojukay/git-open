@@ -57,6 +57,6 @@ func OpenWithSelect(origins []string) error {
 func printVersion() {
 	info, ok := debug.ReadBuildInfo()
 	if ok {
-		println(info.Main.Version, info.Main.Sum)
+		println(info.Main.Version)
 	}
 }
