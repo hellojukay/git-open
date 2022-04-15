@@ -13,5 +13,8 @@ func Open(url string) error {
 	if err != nil {
 		return fmt.Errorf("can not find open, %s", err.Error())
 	}
-	return exec.Command(bin, url).Run()
+	c := exec.Command(bin, url)
+	c.Stdout = os.Stdout
+	c.Stderr = os.Stderr
+	return c.Run()
 }

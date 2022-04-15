@@ -22,6 +22,8 @@ func Open(url string) error {
 	if err != nil {
 		return err
 	}
+	c.Stdout = os.Stdout
+	c.Stderr = os.Stderr
 	c.Start()
 	w.Write([]byte(fmt.Sprintf("start %s\n", url)))
 	time.Sleep(time.Second)
