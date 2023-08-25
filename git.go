@@ -36,7 +36,7 @@ func GitRemotes() ([]string, error) {
 	return git2https(uniq(result)), nil
 }
 
-//remove duplicate string
+// remove duplicate string
 func uniq(list []string) []string {
 	var m = make(map[string]bool)
 	for i := range list {
@@ -49,20 +49,25 @@ func uniq(list []string) []string {
 	return result
 }
 
-//git ssh protocol address convert to https protocol address
-//$remote = $remote =~ s/\.git$//r;
-//$remote = $remote =~ s/^git@/https:\/\//r;
-//$remote = $remote =~ s/(:)([^\/])/\/$2/r;
+// git ssh protocol address convert to https protocol address
+// $remote = $remote =~ s/\.git$//r;
+// $remote = $remote =~ s/^git@/https:\/\//r;
+// $remote = $remote =~ s/(:)([^\/])/\/$2/r;
 func git2https(origins []string) []string {
 	var result []string
 	end := regexp.MustCompile(`.git$`)
 	protocol := regexp.MustCompile(`^git@`)
 	s := regexp.MustCompile(`(:)([^\/])`)
 	for _, origin := range origins {
-		r := end.ReplaceAll([]byte(origin), []byte(""))
-		r = protocol.ReplaceAll(r, []byte("https://"))
-		r = s.ReplaceAll(r, []byte("/$2"))
-		result = append(result, string(r))
+		if protocol.Match([]byte(origin)) {
+			r := end.ReplaceAll([]byte(origin), []byte(""))
+			r = protocol.ReplaceAll(r, []byte("https://"))
+			r = s.ReplaceAll(r, []byte("/$2"))
+			result = append(result, string(r))
+		} else {
+			result = append(result, origin)
+		}
+
 	}
 	return result
 }
