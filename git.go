@@ -77,7 +77,7 @@ func ISGithub(origin string) bool {
 }
 
 func WithPipeline(origin string) string {
-	origin = strings.TrimRight(origin, ".git")
+	origin = strings.TrimSuffix(origin, ".git")
 	if ISGithub((origin)) {
 		return origin + `/actions`
 	}
