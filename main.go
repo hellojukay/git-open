@@ -9,8 +9,10 @@ import (
 	tui "github.com/manifoldco/promptui"
 )
 
-var pipeline bool
-var version bool
+var (
+	pipeline bool
+	version  bool
+)
 
 func init() {
 	flag.BoolVar(&pipeline, "p", false, "open github action page or gitlab pipeline page")
